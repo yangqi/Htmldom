@@ -12,14 +12,14 @@ class HtmldomServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	/**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        $this->package('yangqi/htmldom');
-    }
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->package('yangqi/htmldom');
+	}
 
 	/**
 	 * Register the service provider.
@@ -29,9 +29,9 @@ class HtmldomServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		$this->app['htmldom'] = $this->app->share(function($app)
-        {
-            return new Htmldom;
-        });
+		{
+			return new Htmldom;
+		});
 	}
 
 	/**
