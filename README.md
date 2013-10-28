@@ -18,6 +18,7 @@ Add the following line to the `require` section of `composer.json`:
 ## Laravel 4 Setup
 
 1. Add the service provider to `app/config/app.php`.
+
 ```php
 'providers' => array(
     ...
