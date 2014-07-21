@@ -363,7 +363,7 @@ class Htmldom {
 
 		if (empty($charset))
 		{
-			$el = $this->root->find('meta[http-equiv=Content-Type]',0);
+			$el = $this->root->find('meta[http-equiv=Content-Type]',0,true);
 			if (!empty($el))
 			{
 				$fullvalue = $el->content;
