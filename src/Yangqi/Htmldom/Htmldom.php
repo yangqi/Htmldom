@@ -225,7 +225,7 @@ class Htmldom {
 	 */
 	public function str_get_html($str, $lowercase = true, $forceTagsClosed = true, $target_charset = DEFAULT_TARGET_CHARSET, $stripRN = true, $defaultBRText = DEFAULT_BR_TEXT, $defaultSpanText = DEFAULT_SPAN_TEXT)
 	{
-		if (empty($str) || $strlen($str) > MAX_FILE_SIZE)
+		if (empty($str) || strlen($str) > MAX_FILE_SIZE)
 		{
 			return false;
 		}
