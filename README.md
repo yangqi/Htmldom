@@ -50,5 +50,5 @@ foreach($html->find('a') as $element)
        echo $element->href . '<br>';
 ```
 
-See the deailed documentation http://simplehtmldom.sourceforge.net/manual.htm
+See the detailed documentation http://simplehtmldom.sourceforge.net/manual.htm
 
