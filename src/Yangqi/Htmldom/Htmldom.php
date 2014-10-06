@@ -258,7 +258,7 @@ class Htmldom {
 	}
 
 	// save dom as string
-	protected function save($filepath='')
+	public function save($filepath='')
 	{
 		$ret = $this->root->innertext();
 		if ($filepath!=='') file_put_contents($filepath, $ret, LOCK_EX);
