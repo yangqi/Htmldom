@@ -698,7 +698,8 @@ class Htmldomnode
 			}
 			else
 			{
-				$converted_text = iconv($sourceCharset, $targetCharset, $text);
+				$sourceCharset = trim($sourceCharset);
+				$converted_text = iconv($sourceCharset, $targetCharset . '//IGNORE', $text);
 			}
 		}
 
