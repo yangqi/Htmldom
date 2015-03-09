@@ -1,5 +1,5 @@
 {
-    "name": "yangqi/htmldom",
+    "name": "cliffus/htmldom",
     "type": "library",
     "description": "Simple Html Dom Parser for Laravel 4",
     "keywords": ["laravel", "html parser"],
