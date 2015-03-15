@@ -335,7 +335,7 @@ class Htmldomnode
 		// In rare cases, (always node type 1 or HDOM_TYPE_ELEMENT - observed for some span tags, and some p tags) $this->nodes is set to NULL.
 		// NOTE: This indicates that there is a problem where it's set to NULL without a clear happening.
 		// WHY is this happening?
-		/*if (!is_null($this->nodes))
+		if (!is_null($this->nodes))
 		{
 			foreach ($this->nodes as $n)
 			{
@@ -349,7 +349,7 @@ class Htmldomnode
 			}
 
 
-		}*/
+		}
 		return $ret;
 	}
 
