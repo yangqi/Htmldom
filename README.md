@@ -15,7 +15,7 @@ Add the following line to the `require` section of `composer.json`:
 }
 ```
 
-## Laravel 5 Setup
+## Laravel 5 Setup (same as Laravel 4)
 
 1. Add the service provider to `config/app.php`.
 
@@ -26,25 +26,6 @@ Add the following line to the `require` section of `composer.json`:
     ...
 ```
 2. Add alias to `config/app.php`.
-
-```php
-'aliases' => array(	
-    ...
-	'Htmldom' => 'Yangqi\Htmldom\Htmldom',
-    ...
-```
-
-## Laravel 4 Setup
-
-1. Add the service provider to `app/config/app.php`.
-
-```php
-'providers' => array(
-    ...
-	'Yangqi\Htmldom\HtmldomServiceProvider',
-    ...
-```
-2. Add alias to `app/config/app.php`.
 
 ```php
 'aliases' => array(	
