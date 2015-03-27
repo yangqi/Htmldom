@@ -9,7 +9,7 @@ class HtmldomServiceProvider extends ServiceProvider {
 	 *
 	 * @var bool
 	 */
-	protected $defer = false;
+	protected $defer = true;
 
 	/**
 	 * Bootstrap the application events.
@@ -28,7 +28,7 @@ class HtmldomServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['htmldom'] = $this->app->share(function($app)
+		$this->app->bind('htmldom', function()
 		{
 			return new Htmldom;
 		});
