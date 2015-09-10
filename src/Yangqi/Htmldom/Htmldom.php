@@ -113,7 +113,7 @@ class Htmldom {
 	{
 		if ($str)
 		{
-			if (preg_match("/^http:\/\//i",$str) || is_file($str))
+			if (preg_match("/^(http|https):\/\//i",$str) || is_file($str))
 			{
 				$this->load_file($str);
 			}
