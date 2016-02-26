@@ -53,7 +53,7 @@ foreach($html->find('a') as $element)
 ## Using a proxy
 
 ```php
-$auth = base64_encode('proxy_user:pxosy_password');
+$auth = base64_encode('proxy_user:proxy_password');
 $context = array
 (
     'http' => array
