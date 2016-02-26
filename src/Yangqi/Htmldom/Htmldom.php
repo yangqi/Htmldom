@@ -109,13 +109,17 @@ class Htmldom {
 		'option'=>array('option'=>1),
 	);
 
-	public function __construct($str=null, $lowercase=true, $forceTagsClosed=true, $target_charset=DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT)
+	public function __construct($str=null, $lowercase=true, $forceTagsClosed=true, $target_charset=DEFAULT_TARGET_CHARSET, $stripRN=true, $defaultBRText=DEFAULT_BR_TEXT, $defaultSpanText=DEFAULT_SPAN_TEXT, $context = false)
 	{
 		if ($str)
 		{
 			if (preg_match("/^(http|https):\/\//i",$str) || is_file($str))
 			{
-				$this->load_file($str);
+				if($context) {
+					$this->load_file($str, false, $context);
+				} else {
+					$this->load_file($str);
+				}
 			}
 			else
 			{
