@@ -10,7 +10,7 @@ Add the following line to the `require` section of `composer.json`:
 ```json
 {
     "require": {
-        "yangqi/htmldom": "dev-master"
+        "yangqi/htmldom": "1.0.*"
     }
 }
 ```
