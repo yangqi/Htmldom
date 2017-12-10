@@ -89,6 +89,7 @@ class Htmldom {
 	public $_target_charset = '';
 	protected $default_br_text = "";
 	public $default_span_text = "";
+	public $response_code = null;
 
 	// use isset instead of in_array, performance boost about 30%...
 	protected $self_closing_tags = array('img'=>1, 'br'=>1, 'input'=>1, 'meta'=>1, 'link'=>1, 'hr'=>1, 'base'=>1, 'embed'=>1, 'spacer'=>1);
@@ -176,6 +177,7 @@ class Htmldom {
 	{
 		$args = func_get_args();
 		$this->load(call_user_func_array('file_get_contents', $args), true);
+		$this->set_response_code($http_response_header[0]);
 		// Throw an error if we can't properly load the dom.
 		if (($error=error_get_last())!==null) {
 			$this->clear();
@@ -416,6 +418,13 @@ class Htmldom {
 		if (is_object($debug_object)) {$debug_object->debug_log(1, 'EXIT - ' . $charset);}
 
 		return $this->_charset = $charset;
+	}
+
+	// search response code in $http_response_header variable.
+	protected function set_response_code($response_string)
+	{
+		$response_parts = explode(' ', $response_string);
+		$this->response_code = $response_parts[1];
 	}
 
 	// read tag info
