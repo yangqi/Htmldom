@@ -50,5 +50,21 @@ foreach($html->find('a') as $element)
        echo $element->href . '<br>';
 ```
 
+## Using a proxy
+
+```php
+$auth = base64_encode('proxy_user:proxy_password');
+$context = array
+(
+    'http' => array
+    (
+        'proxy' => 'my.proxy.com:8080',
+        'request_fulluri' => true,
+        'header' => "Proxy-Authorization: Basic $auth",
+    ),
+);
+$context = stream_context_create($context);
+$html = new Htmldom($url, true, true, 'UTF-8', true, "\r\n", " ", $context );
+```
 See the detailed documentation http://simplehtmldom.sourceforge.net/manual.htm
 
